@@ -11,6 +11,7 @@ composeBom = "2024.09.00"
 camerax = "1.6.0"
 room = "2.8.4"
 ksp = "2.0.21-1.0.28"
+guava = "31.0.1-android"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -35,6 +36,9 @@ androidx-camera-view = { module = "androidx.camera:camera-view", version.ref = "
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
 androidx-lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycleRuntimeKtx" }
+# camera-lifecycle의 guava:listenablefuture stub이 빈 jar라
+# ProcessCameraProvider future 타입이 컴파일타임에 보이지 않음 → 명시적 추가
+com-google-guava = { module = "com.google.guava:guava", version.ref = "guava" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
